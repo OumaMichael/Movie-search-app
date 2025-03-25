@@ -47,17 +47,6 @@ MovieBoy1-show is a lightweight and user-friendly movie search application that 
 
 - **GIF Animation Restart:** The JavaScript code ensures the Ninja Turtle GIF animation restarts on every page load.
 
-    ```javascript
-    document.addEventListener("DOMContentLoaded", function() {
-      const logoGif = document.querySelector('.logo');
-      if (logoGif) {
-         const currentSrc = logoGif.src;
-         logoGif.src = "";
-         logoGif.src = currentSrc;
-      }
-    });
-    ```
-
 - **Movie Search Functionality:** The app listens for a search form submission, sends a request to the OMDb API with the user's query, and dynamically displays the search results.
 
 ## Customization
