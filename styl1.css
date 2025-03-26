@@ -1,0 +1,205 @@
+/* General Styling */
+body {
+    background-image: url('/Assets/Watch-Free-Hero-2048x1152-1-1024x576.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Search Section */
+.search-element {
+    text-align: center;
+}
+
+#result-type-container {
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+#result-type-container li {
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#result-type-container li.active {
+    background-color: #007bff;
+}
+
+/* Search Form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap;
+}
+
+#searchInput {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchBtn {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Scrollable Layout */
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    max-height: 80vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Hide Scrollbar */
+#searchResults::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#searchResults::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Movie Card Styling */
+.movie-card {
+    flex: 0 0 auto;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.movie-card .movie-poster {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-card .movie-title {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.movie-card .movie-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Hover Animation */
+.movie-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card:hover .movie-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Movie Pop-Up Modal */
+.movie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.movie-modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
